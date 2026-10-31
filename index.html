@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CABINE CHEZ VALEY</title>
+<meta name="theme-color" content="#102A43">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Valey">
+<style>
+:root{--o:#FF7900;--y:#FFC400;--b:#102A43;--bg:#F6F7F9;--card:#fff;--tx:#102A43;--mu:#627D98;--ln:#E4E7EB;--ok:#1B8A5A;--wa:#1DC8F2;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1B2B;--card:#14283D;--tx:#F0F4F8;--mu:#9FB3C8;--ln:#243B53}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx);max-width:520px;margin:auto;min-height:100vh}
+header{background:var(--b);color:#fff;padding:18px 18px 22px;border-radius:0 0 24px 24px}
+header h1{margin:0;font-size:20px;letter-spacing:.5px}header h1 span{color:var(--y)}
+header p{margin:4px 0 0;color:#BCCCDC;font-size:14px}
+.sw{display:flex;gap:6px;margin-top:14px;background:#ffffff1a;padding:4px;border-radius:12px}
+.sw button{flex:1;border:0;background:none;color:#fff;padding:9px;border-radius:9px;font-size:14px;font-weight:600}
+.sw button.on{background:var(--o)}
+main{padding:16px 16px 90px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:16px;padding:16px;margin-bottom:14px}
+h2{font-size:17px;margin:0 0 12px}
+.nets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.net{border:2px solid var(--ln);border-radius:14px;padding:14px 6px;text-align:center;font-weight:700;background:var(--card);color:var(--tx);font-size:15px}
+.net i{display:block;width:30px;height:30px;border-radius:50%;margin:0 auto 6px}
+.net.on{border-color:var(--o);box-shadow:0 0 0 3px #FF790033}
+.net[disabled]{opacity:.4}
+label{font-size:13px;color:var(--mu);display:block;margin:12px 0 6px}
+input{width:100%;padding:14px;border-radius:12px;border:1.5px solid var(--ln);background:var(--card);color:var(--tx);font-size:17px}
+.amts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.amt{border:1.5px solid var(--ln);border-radius:12px;padding:12px 4px;background:var(--card);color:var(--tx);font-weight:600}
+.amt.on{background:var(--b);color:#fff;border-color:var(--b)}
+.btn{width:100%;border:0;border-radius:14px;padding:16px;font-size:17px;font-weight:700;background:var(--o);color:#fff;margin-top:14px}
+.btn.wave{background:var(--wa);color:#04384a}.btn.alt{background:var(--card);color:var(--tx);border:1.5px solid var(--ln)}
+.btn[disabled]{opacity:.45}
+.err{color:#D64545;font-size:13px;margin-top:6px}
+.row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--ln);font-size:15px;gap:10px}
+.row:last-child{border:0}.row b{text-align:right}
+.tag{font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.t-ok{background:#1B8A5A22;color:var(--ok)}.t-wait{background:#FFC40033;color:#B07F00}.t-ko{background:#D6454522;color:#D64545}.t-ref{background:#627D9833;color:var(--mu)}
+.steps{display:flex;gap:6px;margin-bottom:14px}.steps div{flex:1;height:5px;border-radius:9px;background:var(--ln)}.steps .on{background:var(--o)}
+.note{font-size:12.5px;color:var(--mu);background:#FFC40022;border-left:4px solid var(--y);padding:10px;border-radius:8px;margin:12px 0}
+nav{position:fixed;bottom:0;left:0;right:0;max-width:520px;margin:auto;background:var(--card);border-top:1px solid var(--ln);display:flex;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;border:0;background:none;color:var(--mu);padding:8px 2px;font-size:12px;font-weight:600}
+nav button.on{color:var(--o)}nav button b{display:block;font-size:20px}
+.kpi{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.kpi div{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:14px}.kpi small{color:var(--mu)}.kpi b{display:block;font-size:22px;margin-top:4px}
+.bars{display:flex;align-items:flex-end;gap:8px;height:110px}.bars div{flex:1;background:linear-gradient(var(--y),var(--o));border-radius:6px 6px 0 0;position:relative}
+.bars span{position:absolute;bottom:-18px;left:0;right:0;text-align:center;font-size:11px;color:var(--mu)}
+.tl{display:flex;gap:8px;margin-top:10px;font-size:12px;color:var(--mu)}.tl div{flex:1;text-align:center}.tl i{display:block;height:6px;border-radius:9px;background:var(--ln);margin-bottom:4px}.tl .on i{background:var(--ok)}.tl .cur i{background:var(--y)}
+.sub{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px}.sub button{border:1px solid var(--ln);background:var(--card);color:var(--tx);border-radius:99px;padding:8px 14px;white-space:nowrap;font-size:13px}.sub .on{background:var(--o);color:#fff;border-color:var(--o)}
+.sm{padding:9px;font-size:15px;width:90px;text-align:right}
+</style>
+</head>
+<body>
+<header>
+<h1>CABINE CHEZ <span>VALEY</span></h1>
+<p>Votre crédit, en quelques instants.</p>
+<div class="sw"><button id="bc" class="on">Espace client</button><button id="ba">Espace admin</button></div>
+</header>
+<main id="m"></main>
+<nav id="nv"></nav>
+<script>
+const NETS={orange:{n:"Orange",c:"#FF7900",p:"07"},mtn:{n:"MTN",c:"#FFC400",p:"05"},moov:{n:"Moov",c:"#1F6FEB",p:"01"}};
+const AMTS=[500,1000,2000,5000,10000,20000];
+const F=n=>n.toLocaleString("fr-FR").replace(/\u202f/g," ")+" FCFA";
+const ST={livre:["Livré","t-ok"],attente:["En attente de paiement vérifié","t-wait"],verif:["Paiement vérifié","t-wait"],echec:["Échec","t-ko"],rembourse:["Remboursé","t-ref"]};
+let S={view:"client",tab:"order",step:1,net:null,num:"",amt:null,err:"",last:null,at:"stats",
+ orders:[
+  {id:"CV-1042",net:"orange",num:"0707123456",amt:2000,st:"livre",d:"29/10",cl:"Awa K."},
+  {id:"CV-1041",net:"mtn",num:"0505987654",amt:5000,st:"livre",d:"28/10",cl:"Kouadio Y."},
+  {id:"CV-1040",net:"moov",num:"0102334455",amt:1000,st:"echec",d:"27/10",cl:"Awa K."},
+  {id:"CV-1039",net:"orange",num:"0708445566",amt:10000,st:"rembourse",d:"25/10",cl:"Mariam T."}],
+ comm:{orange:3,mtn:3,moov:4},on:{orange:true,mtn:true,moov:true},
+ clients:[["Awa K.","0701000001",12],["Kouadio Y.","0501000002",7],["Mariam T.","0102000003",3]]};
+const $=s=>document.querySelector(s),m=$("#m");
+function track(st){const k=["Commande","Paiement","Vérification","Envoi"],i={attente:1,verif:2,livre:4,echec:2,rembourse:2}[st];
+ return `<div class="tl">${k.map((x,j)=>`<div class="${j<i?"on":j==i?"cur":""}"><i></i>${x}</div>`).join("")}</div>`}
+function tag(s){return `<span class="tag ${ST[s][1]}">${ST[s][0]}</span>`}
+function client(){
+ if(S.tab=="hist")return `<h2>Historique et suivi</h2>`+S.orders.filter(o=>o.cl=="Awa K.").map(o=>`<div class="card"><div class="row"><b>${NETS[o.net].n} · ${F(o.amt)}</b>${tag(o.st)}</div><small style="color:var(--mu)">${o.id} · ${o.num} · ${o.d}</small>${track(o.st)}</div>`).join("");
+ if(S.tab=="acc")return `<div class="card"><h2>Mon compte</h2><label>Nom</label><input value="Awa K." readonly><label>Téléphone</label><input value="07 01 00 00 01" readonly><button class="btn alt">Déconnexion</button></div><div class="note">Inscription et connexion : écrans à brancher sur Supabase Auth (étape 3 du guide).</div>`;
+ const st=`<div class="steps">${[1,2,3,4].map(i=>`<div class="${i<=S.step?"on":""}"></div>`).join("")}</div>`;
+ if(S.step==1)return st+`<div class="card"><h2>1. Choisissez le réseau</h2><div class="nets">${Object.entries(NETS).map(([k,v])=>`<button class="net ${S.net==k?"on":""}" ${S.on[k]?"":"disabled"} onclick="S.net='${k}';R()"><i style="background:${v.c}"></i>${v.n}</button>`).join("")}</div>
+ <label>Numéro du bénéficiaire (10 chiffres)</label><input id="nu" inputmode="numeric" maxlength="10" placeholder="07 xx xx xx xx" value="${S.num}" oninput="S.num=this.value.replace(/\\D/g,'')">
+ <label>Montant du crédit</label><div class="amts">${AMTS.map(a=>`<button class="amt ${S.amt==a?"on":""}" onclick="S.num=$('#nu').value;S.amt=${a};R()">${F(a)}</button>`).join("")}</div>
+ ${S.err?`<div class="err">${S.err}</div>`:""}<button class="btn" onclick="next1()">Continuer</button></div>`;
+ const c=S.comm[S.net],fee=Math.round(S.amt*c/100);
+ if(S.step==2)return st+`<div class="card"><h2>2. Récapitulatif</h2><div class="row"><span>Réseau</span><b>${NETS[S.net].n}</b></div><div class="row"><span>Bénéficiaire</span><b>${S.num}</b></div><div class="row"><span>Crédit</span><b>${F(S.amt)}</b></div><div class="row"><span>Frais de service</span><b>${F(fee)}</b></div><div class="row"><span>Total à payer</span><b>${F(S.amt+fee)}</b></div>
+ <div class="note">Paiement uniquement par Wave. Ne communiquez jamais votre code PIN Wave : il ne vous sera jamais demandé ici.</div>
+ <button class="btn wave" onclick="S.step=3;R()">Payer avec Wave</button><button class="btn alt" onclick="S.step=1;R()">Modifier</button></div>`;
+ if(S.step==3)return st+`<div class="card"><h2>3. Paiement Wave</h2><p>Vous allez être redirigé vers l’application Wave pour payer <b>${F(S.amt+fee)}</b>. La confirmation du paiement viendra de Wave, jamais de cette page.</p>
+ <div class="note">Prototype : aucune vraie transaction. En production, le bouton ouvre le lien de paiement Wave et le serveur attend la confirmation officielle (webhook).</div>
+ <button class="btn wave" onclick="pay()">Ouvrir Wave (démo)</button><button class="btn alt" onclick="S.step=2;R()">Retour</button></div>`;
+ const o=S.last;return st+`<div class="card"><h2>4. Commande enregistrée</h2><div class="row"><span>Numéro</span><b>${o.id}</b></div><div class="row"><span>Statut</span>${tag(o.st)}</div>${track(o.st)}
+ <div class="note">Le crédit ne sera envoyé qu’après vérification réelle du paiement par le serveur. Aucun succès n’est affiché avant cela.</div><button class="btn" onclick="reset()">Nouvelle commande</button></div>`}
+function next1(){const n=S.num=($("#nu")||{value:S.num}).value.replace(/\D/g,"");
+ if(!S.net)S.err="Choisissez un réseau.";else if(n.length!=10)S.err="Le numéro doit avoir 10 chiffres.";
+ else if(!n.startsWith(NETS[S.net].p))S.err=`Un numéro ${NETS[S.net].n} commence par ${NETS[S.net].p}.`;
+ else if(!S.amt)S.err="Choisissez un montant.";else{S.err="";S.step=2}R()}
+function pay(){S.last={id:"CV-"+(1043+S.orders.length-4),net:S.net,num:S.num,amt:S.amt,st:"attente",d:"31/10",cl:"Awa K."};S.orders.unshift(S.last);S.step=4;R()}
+function reset(){S.step=1;S.net=null;S.num="";S.amt=null;R()}
+function admin(){
+ const ok=S.orders.filter(o=>o.st=="livre"),ca=ok.reduce((a,o)=>a+o.amt,0),cm=ok.reduce((a,o)=>a+Math.round(o.amt*S.comm[o.net]/100),0);
+ const sub=`<div class="sub">${[["stats","Statistiques"],["cmd","Commandes"],["tar","Tarifs et réseaux"],["cli","Clients"],["ref","Remboursements"]].map(([k,l])=>`<button class="${S.at==k?"on":""}" onclick="S.at='${k}';R()">${l}</button>`).join("")}</div>`;
+ if(S.at=="stats")return sub+`<div class="kpi"><div><small>Ventes (démo)</small><b>${F(ca)}</b></div><div><small>Commissions</small><b>${F(cm)}</b></div><div><small>Commandes</small><b>${S.orders.length}</b></div><div><small>Clients</small><b>${S.clients.length}</b></div></div><div class="card"><h2>Ventes par jour (fictif)</h2><div class="bars" style="margin-bottom:24px">${[40,65,30,80,55,95,70].map((h,i)=>`<div style="height:${h}%"><span>${"LMMJVSD"[i]}</span></div>`).join("")}</div></div>`;
+ if(S.at=="cmd")return sub+S.orders.map(o=>`<div class="card"><div class="row"><b>${o.id} · ${NETS[o.net].n}</b>${tag(o.st)}</div><small style="color:var(--mu)">${o.cl} → ${o.num} · ${F(o.amt)} · ${o.d}</small></div>`).join("");
+ if(S.at=="tar")return sub+`<div class="card"><h2>Réseaux et commissions</h2>${Object.entries(NETS).map(([k,v])=>`<div class="row" style="align-items:center"><span>${v.n}</span><span><input class="sm" type="number" value="${S.comm[k]}" onchange="S.comm['${k}']=+this.value"> %</span><button class="tag ${S.on[k]?"t-ok":"t-ko"}" style="border:0" onclick="S.on['${k}']=!S.on['${k}'];R()">${S.on[k]?"Actif":"Désactivé"}</button></div>`).join("")}</div><div class="card"><h2>Montants proposés</h2><p style="margin:0;color:var(--mu)">${AMTS.map(F).join(" · ")}</p></div>`;
+ if(S.at=="cli")return sub+S.clients.map(c=>`<div class="card"><div class="row"><b>${c[0]}</b><span>${c[2]} commandes</span></div><small style="color:var(--mu)">${c[1]}</small></div>`).join("");
+ const r=S.orders.filter(o=>["echec","rembourse"].includes(o.st));
+ return sub+(r.length?r.map(o=>`<div class="card"><div class="row"><b>${o.id} · ${F(o.amt)}</b>${tag(o.st)}</div><small style="color:var(--mu)">${o.cl} · ${o.d}</small>${o.st=="echec"?`<button class="btn alt" onclick="refund('${o.id}')">Marquer comme remboursé</button>`:""}</div>`).join(""):`<div class="card">Aucun remboursement.</div>`)}
+function refund(id){S.orders.find(o=>o.id==id).st="rembourse";R()}
+function R(){
+ $("#bc").className=S.view=="client"?"on":"";$("#ba").className=S.view=="admin"?"on":"";
+ m.innerHTML=S.view=="client"?client():admin();
+ $("#nv").innerHTML=S.view=="client"?[["order","🛒","Commander"],["hist","🧾","Historique"],["acc","👤","Compte"]].map(([k,i,l])=>`<button class="${S.tab==k?"on":""}" onclick="S.tab='${k}';R()"><b>${i}</b>${l}</button>`).join(""):"";
+ $("#nv").style.display=S.view=="client"?"flex":"none";window.scrollTo(0,0)}
+$("#bc").onclick=()=>{S.view="client";R()};$("#ba").onclick=()=>{S.view="admin";R()};R();
+</script>
+</body>
+</html>
